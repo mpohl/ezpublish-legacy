@@ -1904,6 +1904,7 @@ class eZDebug
         $ipAddressIPV6Pattern = "/^((([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}:([0-9A-Fa-f]{1,4}:)?[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){4}:([0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){3}:([0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){2}:([0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){6}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(([0-9A-Fa-f]{1,4}:){0,5}:((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|(::([0-9A-Fa-f]{1,4}:){0,5}((\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b)\.){3}(\b((25[0-5])|(1\d{2})|(2[0-4]\d)|(\d{1,2}))\b))|([0-9A-Fa-f]{1,4}::([0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})|(::([0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){1,7}:))(\/([0-9]+)$|$)$/";
 
         $ipAddress = eZSys::clientIP();
+		
         if ( $ipAddress )
         {
             foreach( $allowedIpList as $itemToMatch )
@@ -1914,11 +1915,12 @@ class eZDebug
                 {
                     if ( preg_match( $ipAddressIPV6Pattern, $itemToMatch, $matches ) )
                     {
+                        
                         if ( $matches[69] )
                         {
                             if ( self::isIPInNetIPv6( $ipAddress, $itemToMatch ) )
                             {
-                                return true;
+								return true;
                             }
 
                         }
@@ -1937,6 +1939,9 @@ class eZDebug
                     {
                         if ( $matches[6] )
                         {
+                            // mpohl : debug by ip fix
+                            // https://jira.ez.no/browse/EZP-24110?filter=-2
+                            //if ( self::isIPInNet( $itemToMatch, $matches[1], $matches[7] ) )
                             if ( self::isIPInNet( $ipAddress, $matches[1], $matches[7] ) )
                             {
                                 return true;
@@ -1944,6 +1949,9 @@ class eZDebug
                         }
                         else
                         {
+                            // mpohl : debug by ip fix
+                            // https://jira.ez.no/browse/EZP-24110?filter=-2
+                            // if ( $matches[1] == $itemToMatch )
                             if ( $matches[1] == $ipAddress )
                             {
                                 return true;
