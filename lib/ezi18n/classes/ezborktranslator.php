@@ -73,6 +73,10 @@ class eZBorkTranslator extends eZTranslatorHandler
     */
     function borkify( $text )
     {
+        // mpohl : start own bork translator
+        // only [] around untranslated text
+        return '¿'.$text.'';
+        // mpohl : end own bork translator
         $textBlocks = preg_split( "/(%[^ ]+)/", $text, -1, PREG_SPLIT_DELIM_CAPTURE );
         $newTextBlocks = array();
         foreach ( $textBlocks as $text )
