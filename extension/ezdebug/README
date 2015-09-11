@@ -1,0 +1,126 @@
+eZDebug extension for eZ publish
+===================================
+
+Putting the fun back into eZ Publish debugging: new template operators for the
+developer.
+
+
+License
+=======
+GNU General Public License v2.0
+
+
+Requirements
+============
+o  eZ publish version: Make sure you use eZ publish version 4.0 or higher.
+o  PHP version: as indicated in your eZ publish version requirements
+o  Web Browser: Internet Explorer is not recommended (for objInspect, more below)
+o  For the objInspect operator to work, 3 other extensions are necessary:
+   . ezpersistentobject_inspector >= 0.2
+   . ezwebservicesapi >= 0.4, which in turns needs either one of
+   . ezjscore or ggwebservices
+
+
+Installation
+============
+
+1. Make sure you match the requirements stated above
+
+2. Standard eZ Publish extension installation method:
+   - copy the files from the zip under the extension directory
+   - activate the extension either via the admin interface or by editing site.ini.append.php + regenerating autoloads
+
+3. for the objInspect operator to work, give access to the user account that you
+   use for debugging  to the either one of the following policies:
+   . webservices/execute (limitation: ezp.inspect) if you use ggwebservices
+   . ezwebservicesapi/execute (limitation: inspect) if you use ezjscore
+   (note: if both ezjscore and ggwebservices are enabled, ezjscore one is used)
+
+  ### ATTENTION! ###
+  
+  Remove this policy in production, as it allows the grantee to access any
+  information in the eZ Publish database, including eg. user accounts and sessions.
+
+  ### ATTENTION! ###
+
+
+Usage
+=====
+
+This extension adds 6 new template operators:
+ eZDebug
+ objDebug
+ addTimingPoint
+ numQueries
+ objInspect
+ getDefinedVars
+
+The first two are meant to add information into the debug part at the bottom of
+the html pages (unlike what the "attribute" operator does) and at the same time
+in the eZ Publish logs.
+
+Compared to the "attribute" operator, they have the advantage that calls to
+eZDdebug do not need to be removed from the templates before going into production.
+They can also be used to dump info about scalar values, which "attribute" does not.
+
+A common use case is: print the name of the template you are entering, at the
+beginning of every included template. This helps in identifying the template file
+that is generating some warning or error message, as often you will have many
+templates in use, and the template error messages will carry no file/line information.
+
+The third one adds a timing point, which will also be shown in the debug results
+at the bottom of the page along with the time and memory used at the time it was
+executed. It is thus helpful to debug performance problems (e.g. find out in a web
+page which template blocks are taking up most time / memory to execute).
+
+The fourth one returns the number of database queries executed at the time it was
+executed (either in the main database or in the cluster database).
+It is also helpful to debug performance problems.
+
+The fifth one is meant to enable user-friendly, graphically-pleasing way to dump
+variables either in the middle of a template or in the debug output: objects can
+be inspected via drill-down of their properties, links are available to the ez.no
+online docs, and much more.
+You really have to see it to believe it!
+
+The sixth one returns an array of all variables defined, ie. available to the
+template.
+
+Syntax:
+
+1) $value|eZDebug( [debug_level='debug'] [,label=''] )
+
+eZDebug will work with scalar values, arrays and objects, but objects will be
+shown in their php form, ie. they will be different from what you can use
+directly in template code. It provides no limit on recursion depth.
+Debug levels supported: notice, debug, warning, error
+
+2) $value|objDebug( [show_values='not'] [,level=2] )
+
+objDebug displays exactly the same debug information that "attribute" does, but
+prints in the debug logs instead of the middle of the web page.
+
+3) ''|addTimingPoint( 'name of my timing point' )
+
+4) ''|numQueries( [cluster_db=false] )
+
+5) $value|objInspect( [sort_attributes=false] [,show_in_debug=false] )
+
+6) ''|getDefinedVars()
+
+Example usage:
+
+{concat("Current node: ", $node.node_id)|eZDebug()}
+
+{"ASSERT FAILED: WE SHOULD NEVER BE HERE!"|eZDebug('error')}
+
+{$unknown_object_here)|objDebug()}
+
+{concat('Queries executed so far: ',numQueries())|eZDebug()}
+
+{''|getDefinedVars()|attribute(show, 1)}
+
+
+Troubleshooting
+===============
+For more documentation look under doc/

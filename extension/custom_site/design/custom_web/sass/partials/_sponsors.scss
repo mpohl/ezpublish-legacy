@@ -1,0 +1,18 @@
+#sponsoren {
+  width: 100%;
+  height: auto;
+  z-index: 9;
+  overflow: hidden !important;
+  position: relative;
+  img {
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.logos-title {
+  padding: 10px 30px;
+  font-size: 22px;
+  position: relative;
+}

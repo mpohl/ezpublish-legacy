@@ -1,0 +1,10 @@
+objInspect operator:
+. move to usage of a yui dynamic tree instead of all hardcoded style/event changes for nodes
+. fix interactive output printed to the debug output instead of on-screen with IE
+. add a minified version of objinspect.js
+. show a friendly error msg if user has no access rights to ws calls (can be tested before ws call is actually made)
+. remove unused images for a smaller distribution zip
+. make js loading more friendly to yui:
+  if ezjscore is found, leave it up to yui to load the js,
+  otherwise do it by ourselves (need the 2-in-3 yui hacks)
+. use doc from ezpersisentobject_inspector extension (how?)

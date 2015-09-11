@@ -1,0 +1,375 @@
+@media only screen and (max-width:1200px) {
+    .back-to-top {
+        display: none !important;
+    }
+}
+@media only screen and (max-width:1024px) {
+    .fixture-row-left, .fixture-row-right {
+        width: 100%;
+    }
+    .fixture-row-left {
+        border-right: none;
+        border-bottom-style:dashed;
+    }
+}
+@media only screen and (max-width:900px) {
+   #header .logo img{
+      /*
+      height:48px;
+      margin-top: 13px;
+      */
+   }
+   .embed.gallery {
+      padding-left: 30px;
+   }
+   /*
+   #mainmenu{
+      top:-7px;
+   }
+   */
+    #submenu {
+        width:100%;
+        display: none;
+    }
+    #submenu ul li {
+        width: 100%;
+    }
+    #submenu ul li:first-child {
+        padding-top: 10px;
+    }
+    #submenu ul li:last-child {
+        padding-bottom: 10px;
+    }
+    #submenu-login {
+        float: left;
+        width: 100%;
+        display: none;
+    }
+    #submenu-login ul li {
+        float: left;
+        width: 100%;
+        padding-left: 15px;
+    }
+    #submenu-login ul li:first-child {
+        padding-top: 10px;
+    }
+    #submenu-login ul li:last-child {
+        padding-bottom: 10px;
+    }
+    #submenu a, #submenu-login a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+}
+@media only screen and (max-width:800px) {
+   #header {
+      position: static;
+      .headerInner{
+         height: auto;
+         background:  {
+            image: none;
+            color: $white;
+         };
+      }
+   }
+   #header .logo img{
+      display: none;
+   }
+   .object-left {
+      float: none;
+   }
+   .embed.gallery {
+      padding-left: 0px;
+   }
+
+   #searchformmobile{
+        position: static;
+        padding-left: 30px;
+        padding-top: 15px;
+        width: 100% !important;
+    }
+    #searchformmobile.searchbox .button {
+        top:15px;
+    }
+    #mobile-menu {
+        background-image: url("../images/downArrow2.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    .toggleMenu {
+        background-image: url("../images/downArrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+   #mainmenu {
+      float:none;
+      position:static;
+      line-height:40px;
+      padding-right:0px;
+      font-size: 16px;
+      &:before{
+         display:none;
+      }
+      li{
+         border-top: 1px solid $nearly_black;
+
+      }
+      &>li:first-child{
+
+            margin-left: 0;
+      }
+
+      a{
+          color:$white;
+          background-color: $color_main_background;
+          padding:5px 30px;
+      }
+   }
+
+    #mainmenu > li {
+        float: none;
+    }
+    #mainmenu > li > .parent {
+        background-image: url("../images/downArrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    #mainmenu li li .parent {
+        background-image: url("../images/downArrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    #mainmenu li li .parent:hover {
+        background-image: url("../images/downArrow.png");
+        background-repeat: no-repeat;
+        background-position: 95% 50%;
+    }
+    #mainmenu ul li:first-child {
+        margin-top: 0px;
+    }
+    #mainmenu ul li:last-child {
+        margin-bottom: 0px;
+    }
+    #mainmenu ul {
+        display: block;
+        width: 100%;
+    }
+    #mainmenu > li.hover > ul, #mainmenu li li.hover ul {
+        position: static;
+    }
+    #mainmenu a::before, #mainmenu ul li a::before {
+        -webkit-transition:none;
+        -moz-transition: none;
+        -o-transition: none;
+        -ms-transition: none;
+    }
+    #mainmenu a:hover::before {
+        height:0%;
+    }
+    #mainmenu ul li a {
+        padding: 5px 30px 5px 50px;
+        background-color: #616161;
+    }
+    #mainmenu ul li li a {
+        background-color: #616161;
+    }
+
+    #mobile-menu {
+        display: block;
+    }
+   .maincontainer{
+      top:0;
+   }
+
+   .leftcontainer {
+        width: 100%;
+        float: none;
+        padding-right:0px;
+        margin-bottom: 30px;
+    }
+    .rightcontainer {
+        width: 100%;
+        float: none;
+        padding-left: 0px;
+    }
+    .first-clmn, .second-clmn, .third-clmn {
+        padding:0px 0px 30px 0px;
+        width:100%;
+    }
+
+    h1, .page-title, .scores-title {
+        font-size:26px;
+    }
+    h2 {
+        font-size:22px;
+    }
+    h3 {
+        font-size:20px;
+    }
+    h4 {
+        font-size:18px;
+    }
+    h5 {
+        font-size:16px;
+    }
+    h6 {
+        font-size:14px;
+    }
+    #header .logo span {
+        font-size:26px;
+    }
+
+   .contentMobileFirst{
+      border-top:1px solid $nearly_black;
+   }
+    .contentMobileFirst .contentMenu{
+        display:block;
+    }
+
+   .flex-wrapper {
+      min-height: inherit;
+   }
+
+    .sidebarbox.contentMenu{
+        display: none;
+    }
+    .toggleContentMenu {
+        display: block;
+    }
+    .contentMenu a {
+        padding: 10px 15px 10px 30px !important;
+    }
+
+    .flex-wrapper{
+         background-color: #001422;
+    }
+    .flex-title {
+         background-color: #3361AE;
+         position: relative;
+         width: 100%;
+         opacity: 1;
+    }
+    .page-title{
+        padding-top:0;
+    }
+   .ytv-list .ytv-thumb img{
+      width: 80px;
+   }
+   .ytv-list .ytv-content{
+      padding-left: 85px;
+   }
+   .embed.echo_frontpage a{
+      display: block;
+   }
+}
+@media only screen and (max-width:640px) {
+    #header .logo span {
+        margin:0px;
+        float: left;
+        display: block;
+        width: 100%;
+       font-size: 24px;
+    }
+    #header .logo {
+       height:100px;
+    }
+    #header .logo img {
+       display: none;
+    }
+    #header .logo span:after {
+        display:none;
+    }
+    #youtube-wrapper{
+	height: 600px;
+    }
+    .ytv-list .ytv-thumb img{
+        display: none !important;
+    }
+    .ytv-list .ytv-content{
+        padding-left: 0px;
+    }
+    .ytv-list-header img,.ytv-list .ytv-playlists .ytv-thumb img{
+        display: none !important;
+    }
+    .ytv-list-header span{
+        font-size: 14px;
+    }
+    .ytv-video{
+        right: 0;
+	}
+    .ytv-list{
+    width: 100%;
+        margin-top: 300px;
+        height: 300px;
+	}
+    .ytv-video iframe{
+		height: 300px;
+    }
+}
+@media only screen and (max-width:480px) {
+   .isotopeCont figure{
+      max-width: 100%;
+   }
+   .flexslider.loading {
+      min-height: 150px;
+   }
+    .object-right,
+    .object-left,
+    .object-center{
+        margin-bottom: 25px;
+        overflow: hidden;
+        float: none;
+    }
+
+    .object-left .imageleft,
+    .object-right .imageright{
+        margin: 0;
+    }
+
+    .caption-image{
+        text-align: center;
+    }
+
+    /*
+    .object-center {
+        text-align: center;
+        overflow: hidden;
+    }
+    .object-left{
+        float: left;
+    .imageleft{
+        margin-right: 25px;
+    }
+    }
+    .object-right{
+        float: right;
+    .imageright{
+        margin-left: 25px;
+    }
+    */
+
+    .team-gallery li {
+        width:100% !important;
+    }
+    .filters li a {
+        line-height: 3;
+    }
+    .page-title{
+        font-size: 18px;
+    }
+    .page-title a.breadcrump{
+        font-size: 15px;
+    }
+   #header .logo p{
+      position: static;
+      font-size: 15px;
+      padding-right: 15px;
+   }
+
+
+   .post figure img {
+      width: 100%;
+      height: auto;
+   }
+}

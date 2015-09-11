@@ -1,0 +1,43 @@
+/* ================= TABLES ================== */
+.sidebarbox-title {
+  position: relative;
+}
+.sidebarbox-title h3 {
+  margin: 0px;
+  padding: 15px;
+}
+.fixture-row {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.fixture-row a div{
+  -webkit-transition:all 0.1s ease-in-out;
+  -moz-transition:all 0.1s ease-in-out;
+  -o-transition:all 0.1s ease-in-out;
+  -ms-transition:all 0.1s ease-in-out;
+  transition:all 0.1s ease-in-out;
+}
+.fixture-row-left,.fixture-row-right {
+  padding: 10px;
+  width: 50%;
+  height: 40px;
+}
+.fixture-row-left div {
+  padding-left: 15px;
+  float: right;
+  background-color:transparent !important;
+}
+.fixture-row-right div {
+  padding-right: 15px;
+  float: left;
+  background-color:transparent !important;
+}
+.fixture-row-left {
+  float: left;
+}
+.fixture-row-right {
+  float: right;
+  text-align: right;
+}

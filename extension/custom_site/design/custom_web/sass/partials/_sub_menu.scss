@@ -1,0 +1,70 @@
+
+/* ================= SUB MENU  ================== */
+#submenu-container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+#mobile-menu {
+  display: none;
+  list-style: none;
+  padding: 10px 30px;
+  margin: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  font-size: 14px;
+  text-decoration: none !important;
+}
+#submenu {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: bottom;
+  width: 70%;
+  float: left;
+  ul {
+    margin: 0;
+    padding: 0 0 0 15px;
+    list-style: none;
+    li {
+      float: left;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  a {
+    padding: 15px;
+    display: block;
+    margin: 0;
+    vertical-align: bottom;
+  }
+}
+#submenu-login {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: bottom;
+  width: 30%;
+  float: right;
+  ul {
+    margin: 0;
+    padding: 0 15px 0 0;
+    list-style: none;
+    li {
+      float: right;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  a {
+    padding: 15px;
+    display: block;
+    margin: 0;
+    vertical-align: bottom;
+  }
+}

@@ -1,0 +1,40 @@
+div.object-center,
+div.object-left,
+div.object-right{
+   text-align: left;
+   float: none;
+}
+
+/* hide content relations */
+#content-relation-items{
+   display: none;
+}
+
+.ezcca-edit-datatype-ezobjectrelationlist table.list tr {
+   cursor: move;
+}
+.ezcca-edit-datatype-ezobjectrelationlist table.list tr.placeholder {
+   display: block;
+   background: rgb(255, 0, 0);
+   position: relative;
+   margin: 0;
+   padding: 0;
+   border: none;
+}
+.ezcca-edit-datatype-ezobjectrelationlist table.list tr.placeholder:before {
+   content: "";
+   position: absolute;
+   width: 0;
+   height: 0;
+   border: 5px solid rgba(0, 0, 0, 0);
+   border-left-color: rgb(255, 0, 0);
+   margin-top: -5px;
+   left: -5px;
+   border-right: none;
+}
+.ezcca-edit-datatype-ezobjectrelationlist table.list tr.dragged{
+   position: absolute;
+   top: 0;
+   opacity: 0.5;
+   z-index: 2000;
+}

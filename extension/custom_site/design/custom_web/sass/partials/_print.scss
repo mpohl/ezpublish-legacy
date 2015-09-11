@@ -1,0 +1,9 @@
+/* ================= PRINT STYLES  ================== */
+@media print {
+  a[href]:after {
+    content: none;
+  }
+  button{
+    display: none !important;
+  }
+}

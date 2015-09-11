@@ -1,0 +1,117 @@
+/*
+.filters {
+  list-style: none;
+  padding: 15px;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  vertical-align: bottom;
+  li {
+    float: left;
+    margin-right: 13px;
+    a {
+      padding: 5px 10px;
+      line-height: 2;
+      font-size: 16px;
+      -webkit-transition: background-color 0.2s ease-in-out;
+      -moz-transition: background-color 0.2s ease-in-out;
+      -o-transition: background-color 0.2s ease-in-out;
+      -ms-transition: background-color 0.2s ease-in-out;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.team-gallery {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: bottom;
+  li {
+    float: left;
+    position: relative;
+    width: 33.3333333333%;
+    @include transition(all 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000));
+    @include transition-timing-function( cubic-bezier(0.645, 0.045, 0.355, 1.000) );
+
+    a {
+      display: block;
+      position: relative;
+      width: 100% !important;
+      height: auto !important;
+      border-radius: 0 !important;
+      overflow: hidden;
+      outline: 0 !important;
+      -webkit-perspective: 1000;
+      opacity: 1;
+      overflow: hidden;
+      img {
+        display: block;
+        position: relative;
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 0 !important;
+        overflow: hidden;
+        outline: 0 !important;
+        @include transition(all 0.4s ease-in-out);
+        &:hover {
+          opacity: 0.2;
+          @include transform(scale(1.5) rotate(15deg));
+        }
+      }
+      &.clb-photo {
+        overflow: hidden;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url('../images/zoom.png');
+      }
+      &.clb-iframe {
+        overflow: hidden;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url('../images/iframe.png');
+      }
+      &.clb-link {
+        overflow: hidden;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url('../images/link.png');
+      }
+    }
+  }
+  &.quarter li {
+    width: 25%;
+  }
+}
+*/
+.gallery .button-widget {
+  margin: 0 !important;
+  width: 100%;
+}
+.no-effect {
+  pointer-events: none !important;
+  @include transform(rotate(360deg));
+  opacity: 0.3;
+}
+
+.isotopeCont{
+  margin-top: 30px;
+   figure{
+      max-width: 225px;
+      margin-bottom: 20px;
+      float:left;
+   }
+}
+.isotopeCont .caption-image {
+  figcaption{
+    /*display:none;*/
+  }
+  img {
+
+    vertical-align:bottom;
+  }
+}

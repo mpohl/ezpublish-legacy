@@ -1,0 +1,106 @@
+.maincontainer {
+  width: 100%;
+  max-width: 1024px;
+  position: relative;
+  margin: 0 auto 0 auto;
+  overflow: hidden;
+  padding: 0;
+  vertical-align: bottom;
+   //top:112px;
+   top: 142px;
+}
+.flex-wrapper{
+   min-height: 30px;
+   background-color:#fff;
+}
+.pagecontainer {
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  vertical-align: bottom;
+  &.using-grid {
+    padding: 15px 0;
+  }
+  &:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: 20px;
+    margin-left: -20px;
+  }
+}
+.leftcontainer {
+  width: 60%;
+  float: left;
+  padding-right: 15px;
+}
+.rightcontainer {
+  width: 40%;
+  float: right;
+  padding-left: 50px;
+  padding-top: 25px;
+}
+
+.frontpage_root .rightcontainer {
+   padding-left: 10px;
+}
+.sidebarbox {
+  clear: both;
+  margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.transparent-bg {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto 0 auto;
+  position: relative;
+  height: auto;
+  padding: 30px;
+}
+.page-title {
+  padding: 10px 30px;
+  font-size: 30px;
+  position: relative;
+}
+.fixresult-title {
+  padding: 15px 30px 15px 55px;
+  position: relative;
+  background-image: url('../images/date2.png');
+  background-repeat: no-repeat;
+  background-position: 30px center;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.page-img img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+a.breadcrump {
+  font-size: 20px;
+  position: relative;
+  z-index: 10;
+}
+
+/* ================= BACK TO TOP BUTTON ================== */
+.back-to-top {
+   position: fixed;
+   bottom: 20px;
+   right: 30px;
+   display: none;
+   background-image:url('../images/gototop.png');
+   background-repeat:no-repeat;
+   background-position:center center;
+   width:60px;
+   height:60px;
+   @include transition(background 0.2s ease-in-out);
+ }

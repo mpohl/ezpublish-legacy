@@ -1,0 +1,158 @@
+/* ================= MAIN MENU  ================== */
+
+#mainmenu-container {
+   width: 100%;
+   max-width: 1024px;
+   margin: 0 auto 0 auto;
+   position: relative;
+}
+.toggleMenu {
+   display: none;
+   list-style: none;
+   padding: 15px 30px;
+   margin: 0;
+   left: 0;
+   top: 0;
+   width: 100%;
+   z-index: 9;
+   font-size: 20px;
+   text-decoration: none !important;
+}
+#mainmenu {
+   font-size: 14px;
+   list-style: none;
+   *zoom: 1;
+   padding: 0;
+   margin: 0;
+   margin: 0 auto;
+   line-height: 20px;
+   z-index: 9999;
+   position:absolute;
+   //top: -56px;
+   top: -26px;
+   left:31px;
+   /*
+   &:before {
+      content: " ";
+      background:{
+         image: url(../images/icons/mainNav.png);
+         position:0 5px;
+         repeat: no-repeat;
+      }
+      width:20px;
+      height:30px;
+      display: inline-block;
+      float: left;
+   }
+   */
+   &:after {
+      content: " ";
+      display: table;
+      clear: both;
+   }
+   ul {
+      list-style: none;
+      width: 14em;
+      padding: 0;
+      margin: 0;
+      z-index: 99999;
+      background-color: $color_shark_approx;
+      @include box-shadow(2px 2px 5px 0 $mine_shaft_75);
+      li a {
+         padding: 5px 20px;
+         display: inline-block;
+         position: relative;
+         //@include transition( color 0.2s linear);
+         /*
+         &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0;
+            //@include transition( width 0.2s linear);
+         }
+         */
+         > span {
+            position: relative;
+         }
+         &:hover::before {
+            width: 100%;
+         }
+      }
+   }
+   a {
+      padding: 5px 7px;
+      display: inline-block;
+      position: relative;
+      &:hover {
+         text-decoration: none;
+         /*
+         &::before {
+            height: 2px;
+         }
+         */
+      }
+      /*
+      &::before {
+         content: '';
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         height: 0;
+         width: 100%;
+         //@include transition(height .2s linear);
+      }
+      */
+      /*
+      &.parent::before{
+         background-image: url("../images/downArrow.png");
+         background-repeat: no-repeat;
+         background-position: 95% 50%;
+      }
+      */
+      > span {
+         position: relative;
+      }
+   }
+   li {
+      position: relative;
+      ul {
+         position: absolute;
+         left: -9999px;
+      }
+      li {
+         a {
+            display: block;
+            position: relative;
+            z-index: 100;
+         }
+         &.hover ul {
+            left: 100%;
+            top: 0;
+            padding-top: 0;
+         }
+         li a {
+            z-index: 200;
+         }
+      }
+      /*
+      &.active>a:before {
+         height: 2px;
+      }
+      */
+   }
+   > li {
+      &:first-child{
+         margin-left: -6px;
+      }
+      float: left;
+      > a {
+         display: block;
+      }
+      &.hover > ul {
+         left: 0;
+      }
+   }
+}

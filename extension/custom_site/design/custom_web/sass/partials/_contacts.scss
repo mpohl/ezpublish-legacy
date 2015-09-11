@@ -1,0 +1,22 @@
+
+.folder_contacts {
+  h4{
+    text-transform: none;
+    font-weight: bold;
+    @extend p;
+  }
+  .half:nth-child(3) {
+    clear: both;
+    &:before {
+      display: table;
+      content: "";
+      line-height: 0;
+    }
+  }
+  .unit {
+    margin-bottom: 20px;
+  }
+  .folder_contacts{
+    width: 40%;
+  }
+}

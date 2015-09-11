@@ -1,0 +1,98 @@
+
+.flexslider {
+  zoom: 1;
+  position: relative;
+   background-color: $nearly_black;
+
+   &.loading{
+      min-height:350px;
+      &:after{
+         content:'Lade...';
+         position:absolute;
+         top:50%;
+         left:50%;
+         color: $white;
+      }
+   }
+
+  li {
+    margin:0px;
+    padding:0px;
+  }
+  .slides {
+    zoom: 1;
+    background-color:$color_ci_main_55;
+    img{
+      height:auto;
+      max-height: 350px;
+      margin: auto;
+    }
+    &  > li {
+      position: relative;
+      overflow: hidden;
+    }
+  }
+}
+
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {
+  zoom: 1;
+  position: relative;
+}
+/* Direction Nav */
+.flex-direction-nav {
+  height: 0;
+  opacity:0;
+   @include transition(opacity .2s 0);
+  a {
+    height:60px;
+    width:60px;
+    margin: 0;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    cursor: pointer;
+    text-indent: -999em;
+    z-index:100;
+    -webkit-transition: background-color 0.2s ease-in-out;
+    -moz-transition: background-color 0.2s ease-in-out;
+    -o-transition: background-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out;
+  }
+  .flex-next {
+    background-position:center center;
+    background-image:url('../images/s-right.png');
+    background-repeat:no-repeat;
+    left: 60px;
+  }
+  .flex-prev {
+    background-position:center center;
+    background-image:url('../images/s-left.png');
+    background-repeat:no-repeat;
+    left: 0px;
+  }
+  .flex-disabled {
+    opacity:0;
+    filter:alpha(opacity=0);
+    cursor: default;
+  }
+}
+
+.flex-title {
+  position:absolute;
+  bottom:0px;
+  z-index:99;
+  padding: 30px;
+  margin:0px;
+  /*opacity:0.9;*/
+  opacity: 0;
+  right:0px;
+  width: 40%;
+   h3{
+      margin-bottom: 10px;
+   }
+}
+
+.flex-wrapper:hover .flex-direction-nav{
+   opacity: 1;
+}

@@ -1,0 +1,1 @@
+<a target="_blank" title="Email senden" href="mailto:{$attribute.data_text|wash()}">{$attribute.data_text|wash()}</a>
